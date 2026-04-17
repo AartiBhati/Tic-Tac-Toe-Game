@@ -7,14 +7,24 @@ body{
     height:100vh;
     width:100vw;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    background-color: rgb(92, 92, 198);
+     background: linear-gradient(rgb(209, 225, 247), rgb(107, 134, 224),rgb(58, 58, 234));
 }
-
+.playero,.playerx{
+    width:8vw;
+    font-size:1.2rem;
+    font-weight:bold ;
+    padding:1rem;
+    margin:0.9rem;
+    border-radius:5%;
+    background-color: rgb(245, 160, 32);
+    border:1px solid black;
+    box-shadow: 0.1rem 0.1rem 0.1rem black;
+}
 .container{
     height:80vh;
-    width:60vw;
+    width:50vw;
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -29,20 +39,25 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height:15vh;
-    width:15vh;
+    height:10vw;
+    width:10vw;
     border:2px solid black;
     border-radius:10%;
     background-color: white;
-    font-size:6rem;
+    font-size:4rem;
     font-weight: bold;
+    max-width:100px ;
+    max-height: 100px;
 }
 
 .board{
+    width:30vw;
     display:grid;
     grid-template-columns: repeat(3,1fr);
+    padding: 20px;
     gap:4px;
-    padding: 30px;
+    max-width:308px;
+    max-height:308px;
 }
 button{
     height: 30px;
@@ -60,7 +75,7 @@ button:active{
 #winningMessage{
     padding:0.5rem;
     margin:1rem;
-    background-color: cyan;
+    background-color: rgb(116, 229, 158);
     border:1px solid black;
     box-shadow: 0.2rem 0.2rem 0.2rem black;
 

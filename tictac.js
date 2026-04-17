@@ -6,7 +6,7 @@ let winner=[
     [0,4,8],[2,4,6]
 ]
 
-
+document.querySelector('.playero').style.transform='scale(1.3)';
 
 let board_array=new Array(9).fill('E');
 
@@ -27,9 +27,13 @@ function EventHappen(event){
         if(turn==='O'){
             element.innerHTML="O";
             board_array[element.id]="O";
+            document.querySelector('.playero').style.transform='scale(1)';
+            document.querySelector('.playerx').style.transform='scale(1.3)';
             if(checkWinner()){
                 document.getElementById('winningMessage').innerHTML="Winner is 'O'";
                 board.removeEventListener('click',EventHappen);
+                document.querySelector('.playerx').style.transform='scale(1)';
+                document.querySelector('.playero').style.transform='scale(1)';
                 return;
             }
             turn='X';
@@ -37,9 +41,13 @@ function EventHappen(event){
         else{
             element.innerHTML="X";
             board_array[element.id]="X";
+            document.querySelector('.playerx').style.transform='scale(1)';
+            document.querySelector('.playero').style.transform='scale(1.3)';
             if(checkWinner()){
                 document.getElementById('winningMessage').innerHTML="Winner is 'X'";
                 board.removeEventListener('click',EventHappen);
+                document.querySelector('.playerx').style.transform='scale(1)';
+                document.querySelector('.playero').style.transform='scale(1)';
                 return;
             }
             turn='O';
@@ -67,4 +75,5 @@ restart.addEventListener('click',()=>{
     document.getElementById('winningMessage').innerHTML='Winner?';
     board.removeEventListener('click',EventHappen);
     board.addEventListener('click',EventHappen);
+    document.querySelector('.playero').style.transform='scale(1.3)';
 })
