@@ -5,11 +5,18 @@
 }  
 body{
     height:100vh;
-    width:100vw;
+    font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: space-around;
     align-items: center;
-     background: linear-gradient(rgb(209, 225, 247), rgb(107, 134, 224),rgb(58, 58, 234));
+    background: linear-gradient(-45deg, rgb(127, 246, 255), #667eea, #764ba2, #af11cb, #f35eba,rgb(242, 101, 101));
+    background-size: 400% 400%;
+     animation: gradientMove 10s ease infinite;
+}
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 .playero,.playerx{
     width:8vw;
@@ -69,9 +76,7 @@ button{
     box-shadow: 3px 3px 2px black;
     transition: transform 0.1s ease;
 }
-button:active{
-    transform:scale(0.9);
-}
+
 #winningMessage{
     padding:0.5rem;
     margin:1rem;
@@ -79,4 +84,16 @@ button:active{
     border:1px solid black;
     box-shadow: 0.2rem 0.2rem 0.2rem black;
 
+}
+
+.cell:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.05);
+}
+button:hover {
+  transform: scale(1.1);
+  background-color: #ff9800;
+}
+button:active {
+  transform: scale(0.95);
 }
